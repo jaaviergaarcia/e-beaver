@@ -1,0 +1,3 @@
+
+
+{<img alt='Stories in Ready' src='https://badge.waffle.io/jaaviergaarcia/e-beaver.png?label=ready&title=Ready' />}[https://waffle.io/jaaviergaarcia/e-beaver]

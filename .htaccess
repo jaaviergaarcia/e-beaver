@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine On 
+#   RewriteBase /jfcodiaz/estrasol-packages/
+#   RewriteRule ^(.*)$ public\/index\.php\/$1 [L]
+#    RewriteRule ^(.*)$ "http\:\/\/jabe\.mx\/$1" [R=301,L]
+#    RewriteCond ^(.*)public(.*)$ [R=301,L]
+#    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+
+
+#    RewriteBase /jfcodiaz/estrasol-packages 
+
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [OR] 
+    RewriteCond %{HTTPS} ^on
+    #RewriteRule  ^(.*)$ http://localhost/ [L]
+    RewriteRule  .%{REQUEST_URI}  [L]
+
+
+    # Redirect Trailing Slashes If Not A Folder...
+
+#
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    DirectoryIndex index.php server.php
+    
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(css|js|images|assets)/(.*)$ public/$1/$2 [L,NC]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteRule ^ server.php [L]
+
+    RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+
+#
+#
+#    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+</IfModule>

@@ -12,13 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('admin.pages.panel');
+    return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('admin.admin_lte');
+Route::group(['middleware' => 'auth'], function () {
+    //    Route::get('/link1', function ()    {
+//        // Uses Auth Middleware
+//    });
+
+    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
+    #adminlte_routes
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', function () {
+    return view('vendor.adminlte.auth.login');
+});

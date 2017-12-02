@@ -10,16 +10,16 @@ class Stock extends Model
 
     piblic function Product(){
 
-    	return $this->hasMany('App\Product');
+    	return $this->belongsTo('App\Product');
     }
 
     public function Color(){
 
-    	return $this->hasMany('App\Color');
+    	return $this->belongsTo('App\Color');
     }
 
     public function Size(){
 
-    	return $this->hasMany('App\Size');
+    	return $this->belongsTo('App\Size');
     }
 }

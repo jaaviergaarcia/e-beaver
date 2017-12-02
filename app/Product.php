@@ -29,23 +29,23 @@ class Product extends Model
 
     public function Category(){
 
-    	return $this->hasMany('App\Category');
+    	return $this->belongsTo('App\Category');
     }
 
     public function Brand(){
 
-    	return $this->hasMany('App\Brand');
+    	return $this->belongsTo('App\Brand');
     }
 
     //RELACION UNO A MUCHOS
 
     public function Feature(){
 
-    	return $this->belongsTo('App\Feature');
+    	return $this->hasMany('App\Feature');
     }
 
     public function Stock(){
 
-    	return $this->belongsTo('App\Stock');
+    	return $this->hasMany('App\Stock');
     }
 }

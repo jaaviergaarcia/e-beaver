@@ -17,6 +17,6 @@ class Color extends Model
 
     public function Stock(){
 
-    	return $this->belongsTo('App\Stock');
+    	return $this->hasMany('App\Stock');
     }
 }

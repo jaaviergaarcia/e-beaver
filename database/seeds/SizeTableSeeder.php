@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
 
-class DatabaseSeeder extends Seeder
+class SizeTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(SizeTableSeeder::class);
+        //
+        DB::table('Sizes')->insert([
+        	'name'=>str_random(10) 
+        	]);
     }
 }

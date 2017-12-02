@@ -10,6 +10,6 @@ class Country extends Model
 
 
     public function State(){
-    	return $this->belongsTo('App\State');
+    	return $this->hasMany('App\State');
     }
 }

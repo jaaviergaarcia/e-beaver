@@ -39,7 +39,7 @@ class User extends Authenticatable
     //RELACION MUCHOS A UNO
     public function Perfil(){
 
-        return $this->hasMany('App\Profile');
+        return $this->belongsTo('App\Profile');
     }
 
     //RELACION MUCHOS A MUCHOS
@@ -53,11 +53,11 @@ class User extends Authenticatable
     //RELACION UNO A MUCHO
     public function Address(){
         
-        return $this->belongsTo('App\Address');
+        return $this->hasMany('App\Address');
     }
 
     public function billAddress(){
 
-        return $this->belongsTo('App\Bill_Address');
+        return $this->hasMany('App\Bill_Address');
     }
 }

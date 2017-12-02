@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Models; 
-
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
-class Address extends Model
+class Bill_Address extends Model
 {
-	
-    //RELACION MUCHOS A UNO
+
+    //RELACIONES MUCHOS A UNO
     public function State(){
 
     	return $this->belongsTo('App\State');
     }
+    
 
     public function User(){
 
@@ -21,9 +20,8 @@ class Address extends Model
     }
 
 
-
     //RELACION UNO A MUCHOS
-    public function Orden(){
+    public function Order(){
 
     	return $this->hasMany('App\Order');
     }

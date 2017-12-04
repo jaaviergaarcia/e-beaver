@@ -23,7 +23,3 @@ Route::group(['middleware' => 'auth'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 });
-
-Route::get('/login', function () {
-    return view('vendor.adminlte.auth.login');
-});

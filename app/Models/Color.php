@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +17,6 @@ class Color extends Model
 
     public function Stock(){
 
-    	return $this->belongsTo('App\Stock');
+    	return $this->hasMany('App\Stock');
     }
 }

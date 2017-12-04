@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,12 +10,12 @@ class Address extends Model
     //RELACION MUCHOS A UNO
     public function State(){
 
-    	return $this->hasMany('App\State');
+    	return $this->belongsTo('App\State');
     }
 
     public function User(){
 
-    	return $this->hasMany('App\User');
+    	return $this->belongsTo('App\User');
     }
 
 
@@ -23,7 +23,7 @@ class Address extends Model
     //RELACION UNO A MUCHOS
     public function Orden(){
 
-    	return $this->belongsTo('App\Order');
+    	return $this->hasMany('App\Order');
     }
 
 }

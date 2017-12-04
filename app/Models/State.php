@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +9,7 @@ class State extends Model
     //RELACION MUCHOS A UNO
     public function Country()
     {
-    	return $this->hasMany('App\Country');
+    	return $this->belongsTo('App\Country');
     }
 
 
@@ -20,11 +20,11 @@ class State extends Model
     //RELACION UNO A MUCHOS
     public function Address(){
 
-    	return $this->belongsTo('App\Address');
+    	return $this->hasMany('App\Address');
     }
 
     public function billAddress() {
 
-    	return $this->belongsTo('App\Bill_Address');
+    	return $this->hasMany('App\Bill_Address');
     }
 }

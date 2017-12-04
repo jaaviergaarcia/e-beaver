@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Feature extends Model
 {
-    //REALCION UNO A MUCHOS
+    //
 
     public function Product(){
 

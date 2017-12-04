@@ -1,15 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model
+class Category extends Model
 {
     //REALCION UNO A MUCHOS
 
     public function Product(){
 
-    	return $this->belongsTo('App\Product');
+    	return $this->hasMany('App\Product');
     }
 }

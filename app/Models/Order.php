@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,16 +10,16 @@ class Order extends Model
 
     public function billAddress(){
 
-    	return $this->hasMany('App\Bill_Address');
+    	return $this->belongsTo('App\Bill_Address');
     }
 
     public function Address(){
 
-    	return $this->hasMany('App\Address');
+    	return $this->belongsTo('App\Address');
     }
 
     public function Cupon(){
 
-    	return $this->hasMany('App\Cupon');
+    	return $this->belongsTo('App\Cupon');
     }
 }

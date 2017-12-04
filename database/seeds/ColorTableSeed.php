@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App/Models/Color;
+use Faker\Factory as Faker;
 
 class ColorTableSeed extends Seeder
 {
@@ -28,7 +28,7 @@ class ColorTableSeed extends Seeder
         }
 
         foreach($items as $item){
-            Color::create($item);
+            \App\Models\Color::create($item);
         }
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 
 class SizeTableSeeder extends Seeder
@@ -12,9 +13,21 @@ class SizeTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        DB::table('Sizes')->insert([
-        	'name'=>str_random(10) 
-        	]);
+    	$items = [];
+        $sizes = ['XS','S','M','G','XL','XXL','U'];
+        $arrlength = count($sizes);
+        $faker = Faker::create();
+        for($i=0; $i<$arrlength; $i++)
+        { 
+            $array_item = [
+                'name'=>$sizes[$i]
+            ];
+            array_push($items, $array_item);
+        }
+
+        foreach($items as $item){
+            \App\Models\Size::create($item);
+        }
+        
     }
 }

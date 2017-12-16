@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/adminlte', function () {
+    return view('home_admin');
+});
+
+Route::get('/eshopper', function () {
+    return view('eshopper');
+});
+
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware

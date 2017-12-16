@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use Faker\Factory as Faker;
+use Faker\factory as Faker;
 
 use App\Models\Category;
 
@@ -13,6 +13,8 @@ class CategoriesSeederTable extends Seeder
      *
      * @return void
      */
+
+    //$faker = Faker::create();
     public function run() {
         $defualtCategories = [
             ['name'=> 'Damas', 'subs'=> [
@@ -45,10 +47,9 @@ class CategoriesSeederTable extends Seeder
         foreach($categories as $i => $item) {
             $data = [
                 'name' => $item['name'],
-                'slug' => $item['name']
+                'slug' => str_slug($item['name'],'-')
             ];
             if($parent) {
-            	dd($parent);
                 $data['parent_id'] = $parent->id;
             }
             $category = App\Models\Category::create($data);

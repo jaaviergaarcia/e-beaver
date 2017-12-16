@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator\ as Faker;
+use Faker\Factory as Faker;
 
 class BrandTableSeeder extends Seeder
 {

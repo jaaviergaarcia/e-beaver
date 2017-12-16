@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileTable extends Migration
+class RenameTableProfile extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->string('code')->unique();
-            $table->timestamps();
-        });
+        Schema::rename('profile', 'profiles');
+        //Schema::table('profile', function (Blueprint $table) {
+            //
+        //});
     }
 
     /**
@@ -28,6 +26,9 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::rename('profiles', 'profile');
+        //Schema::table('profile', function (Blueprint $table) {
+            //
+        //});
     }
 }

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator\ as Faker;
+use Illuminate\Database\Eloquent\Model;
+
+use Faker\factory as Faker;
 
 
 class CountryTableSeeder extends Seeder
@@ -10,7 +12,10 @@ class CountryTableSeeder extends Seeder
 
     public function run()
     {
-        
+
+    	factory(App\Models\Country::class, 3)->create();
+    	
+    	/*
         $items = [];
 
         $faker = Faker::create();
@@ -28,24 +33,7 @@ class CountryTableSeeder extends Seeder
         foreach($items as $item){
             \App\Models\Country::create($item);
         }
+        */
     }
-   /* public function run()
-    {
-    	
-    	$items=[];
-    	$faker = Faker::create();
-    	for ($i=0; $i < 5; $i++) { 
-    	      	
-    	      	$arrayItem = [
-    	      		'name'=>$faker->country();
-    	      		'code'=>$faker->countryCode();
-    	      	];
-    	 		array_push($items, $arrayItem);
-    	}//end For
-
-    	foreach ($items as $item) {
-    	      	/App/Models/Country::create($item);
-    	} 
-    }//end function run */
 
 }//end Class

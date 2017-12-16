@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\Country as Country;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +30,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+});
+
+Route::get('Countries', function(){
+	return Country::all();
 });

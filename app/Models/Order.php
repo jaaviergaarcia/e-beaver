@@ -10,16 +10,16 @@ class Order extends Model
 
     public function billAddress(){
 
-    	return $this->belongsTo('App\Bill_Address');
+    	return $this->belongsTo('App\Models\Bill_Address');
     }
 
     public function Address(){
 
-    	return $this->belongsTo('App\Address');
+    	return $this->belongsTo('App\Models\Address');
     }
 
     public function Cupon(){
 
-    	return $this->belongsTo('App\Cupon');
+    	return $this->belongsTo('App\Models\Cupon');
     }
 }

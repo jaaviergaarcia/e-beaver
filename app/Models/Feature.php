@@ -10,6 +10,6 @@ class Feature extends Model
 
     public function Product(){
 
-    	return $this->belongsTo('App\Product');
+    	return $this->belongsTo('App\Models\Product');
     }
 }

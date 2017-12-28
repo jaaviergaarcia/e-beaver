@@ -8,18 +8,18 @@ class Stock extends Model
 {
     //RELACION MUCHOS A UNO
 
-    piblic function Product(){
+    public function Product(){
 
-    	return $this->belongsTo('App\Product');
+    	return $this->belongsTo('App\Models\Product');
     }
 
     public function Color(){
 
-    	return $this->belongsTo('App\Color');
+    	return $this->belongsTo('App\Models\Color');
     }
 
     public function Size(){
 
-    	return $this->belongsTo('App\Size');
+    	return $this->belongsTo('App\Models\Size');
     }
 }

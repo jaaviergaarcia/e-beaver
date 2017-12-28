@@ -10,6 +10,6 @@ class Cupon extends Model
 
     public function Order(){
 
-    	return $this->hasMany('App\Order');
+    	return $this->hasMany('App\Models\Order');
     }
 }

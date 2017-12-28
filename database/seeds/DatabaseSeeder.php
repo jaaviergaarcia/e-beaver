@@ -22,9 +22,13 @@ class DatabaseSeeder extends Seeder
             AddressTableSeeder::class,
             BillAddressesTableUser::class,
             CouponsTableSeeder::class,
+            OrdersTableSeeder::class,
             BrandTableSeeder::class,
-            SizeTableSeeder::class,
             ColorTableSeed::class,
+            SizeTableSeeder::class,
+            CategoriesSeederTable::class,
+            ProductTableSeeder::class,
+            StockTableSeeder::class
         ]);
        
     }

@@ -9,7 +9,7 @@ class State extends Model
     //RELACION MUCHOS A UNO
     public function Country()
     {
-    	return $this->belongsTo('App\Country');
+    	return $this->belongsTo('App\Models\Country');
     }
 
 
@@ -20,11 +20,11 @@ class State extends Model
     //RELACION UNO A MUCHOS
     public function Address(){
 
-    	return $this->hasMany('App\Address');
+    	return $this->hasMany('App\Models\Address');
     }
 
     public function billAddress() {
 
-    	return $this->hasMany('App\Bill_Address');
+    	return $this->hasMany('App\Models\Bill_Address');
     }
 }

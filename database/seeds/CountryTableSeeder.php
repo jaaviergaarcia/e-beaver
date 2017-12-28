@@ -13,7 +13,7 @@ class CountryTableSeeder extends Seeder
     public function run()
     {
 
-    	factory(App\Models\Country::class, 3)->create();
+    	factory(App\Models\Country::class, 10)->create();
     	
     	/*
         $items = [];

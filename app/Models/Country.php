@@ -12,7 +12,7 @@ class Country extends Model
 
 
     public function State(){
-    	return $this->hasMany('App\State');
+    	return $this->hasMany('App\Models\State');
     }
 
     

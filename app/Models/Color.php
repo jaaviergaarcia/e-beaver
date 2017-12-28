@@ -10,13 +10,13 @@ class Color extends Model
 
     public function Product(){
 
-    	return $this->belongsToMany('App\Product');
+    	return $this->belongsToMany('App\Models\Product');
     }
 
     //RELACION UNO A MUCHOS
 
     public function Stock(){
 
-    	return $this->hasMany('App\Stock');
+    	return $this->hasMany('App\Models\Stock');
     }
 }

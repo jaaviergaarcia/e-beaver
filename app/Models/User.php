@@ -39,25 +39,25 @@ class User extends Authenticatable
     //RELACION MUCHOS A UNO
     public function Perfil(){
 
-        return $this->belongsTo('App\Profile');
+        return $this->belongsTo('App\Models\Profile');
     }
 
     //RELACION MUCHOS A MUCHOS
 
     public function Product(){
 
-        return $this->belongsToMany('App\Product');
+        return $this->belongsToMany('App\Models\Product');
     }
 
 
     //RELACION UNO A MUCHO
     public function Address(){
         
-        return $this->hasMany('App\Address');
+        return $this->hasMany('App\Models\Address');
     }
 
     public function billAddress(){
 
-        return $this->hasMany('App\Bill_Address');
+        return $this->hasMany('App\Models\Bill_Address');
     }
 }

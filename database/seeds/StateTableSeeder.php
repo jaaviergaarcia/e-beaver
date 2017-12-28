@@ -28,10 +28,9 @@ class StateTableSeeder extends Seeder
 	            ];
 	            array_push($items, $array_item);
 	        }
-
-	        foreach($items as $item){
-	            \App\Models\State::create($item);
-	        }
-    	}        
+    	}
+        foreach($items as $item){
+                \App\Models\State::create($item);
+        }     
     }
 }

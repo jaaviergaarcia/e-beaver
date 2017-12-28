@@ -10,12 +10,12 @@ class Address extends Model
     //RELACION MUCHOS A UNO
     public function State(){
 
-    	return $this->belongsTo('App\State');
+    	return $this->belongsTo('App\Models\State');
     }
 
     public function User(){
 
-    	return $this->belongsTo('App\User');
+    	return $this->belongsTo('App\Models\User');
     }
 
 
@@ -23,7 +23,7 @@ class Address extends Model
     //RELACION UNO A MUCHOS
     public function Orden(){
 
-    	return $this->hasMany('App\Order');
+    	return $this->hasMany('App\Models\Order');
     }
 
 }

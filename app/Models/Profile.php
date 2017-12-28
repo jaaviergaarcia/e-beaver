@@ -10,6 +10,6 @@ class Profile extends Model
 
     public function User(){
 
-    	return $this->hasMany('App\User');
+    	return $this->hasMany('App\Models\User');
     }
 }
